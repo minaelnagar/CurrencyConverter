@@ -26,7 +26,7 @@ A robust, scalable, and maintainable currency conversion API built with C# and A
 
 1. Install Redis:
 ```bash
-choco install redis-64
+choco install redis
 ```
 
 2. Install Seq:
