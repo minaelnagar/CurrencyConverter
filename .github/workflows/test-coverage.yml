@@ -1,0 +1,84 @@
+name: Test Coverage
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 9.0.x
+        
+    - name: Restore dependencies
+      run: dotnet restore
+      
+    - name: Build
+      run: dotnet build --no-restore
+      
+    - name: Test Domain with coverage
+      run: |
+        dotnet test test/CurrencyConverter.Domain.Tests/CurrencyConverter.Domain.Tests.csproj \
+          /p:CollectCoverage=true \
+          /p:CoverletOutputFormat=cobertura \
+          /p:CoverletOutput="./TestResults/" \
+          /p:Include="[CurrencyConverter.Domain]*"
+
+    - name: Test Application with coverage
+      run: |
+        dotnet test test/CurrencyConverter.Application.Tests/CurrencyConverter.Application.Tests.csproj \
+          /p:CollectCoverage=true \
+          /p:CoverletOutputFormat=cobertura \
+          /p:CoverletOutput="./TestResults/" \
+          /p:Include="[CurrencyConverter.Application]*"
+          
+    - name: Test Infrastructure with coverage
+      run: |
+        dotnet test test/CurrencyConverter.Infrastructure.Tests/CurrencyConverter.Infrastructure.Tests.csproj \
+          /p:CollectCoverage=true \
+          /p:CoverletOutputFormat=cobertura \
+          /p:CoverletOutput="./TestResults/" \
+          /p:Include="[CurrencyConverter.Infrastructure]*"
+          
+    - name: Test API with coverage
+      run: |
+        dotnet test test/CurrencyConverter.API.Tests/CurrencyConverter.API.Tests.csproj \
+          /p:CollectCoverage=true \
+          /p:CoverletOutputFormat=cobertura \
+          /p:CoverletOutput="./TestResults/" \
+          /p:Include="[CurrencyConverter.API]*"
+          
+    - name: Generate coverage report
+      run: |
+        dotnet tool install -g dotnet-reportgenerator-globaltool
+        reportgenerator \
+          -reports:"test/**/TestResults/coverage.cobertura.xml" \
+          -targetdir:"coveragereport" \
+          -reporttypes:Html_Dark
+          
+    - name: Upload coverage report
+      uses: actions/upload-artifact@v4
+      with:
+        name: Coverage Report
+        path: coveragereport
+        
+    - name: Check coverage threshold
+      run: |
+        COVERAGE_FILES=(test/**/TestResults/coverage.cobertura.xml)
+        for FILE in "${COVERAGE_FILES[@]}"; do
+          COVERAGE=$(grep -Po 'line-rate="\K[^"]*' "$FILE")
+          COVERAGE_PERCENTAGE=$(awk "BEGIN {print $COVERAGE * 100}")
+          if (( $(echo "$COVERAGE_PERCENTAGE < 90" | bc -l) )); then
+            echo "Coverage is below 90% in $FILE: $COVERAGE_PERCENTAGE%"
+            exit 1
+          fi
+          echo "Coverage for $FILE is at $COVERAGE_PERCENTAGE%"
+        done

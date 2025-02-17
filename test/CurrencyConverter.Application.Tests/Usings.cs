@@ -1,0 +1,13 @@
+﻿global using Xunit;
+global using Moq;
+global using FluentAssertions;
+global using Microsoft.Extensions.Logging;
+global using CurrencyConverter.Domain.Entities;
+global using CurrencyConverter.Domain.Interfaces;
+global using CurrencyConverter.Domain.Services;
+global using CurrencyConverter.Application.Models.Requests;
+global using CurrencyConverter.Application.Models.Responses;
+global using CurrencyConverter.Application.Services;
+global using CurrencyConverter.Application.Validators;
+global using FluentValidation;
+global using FluentValidation.Results;

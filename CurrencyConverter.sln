@@ -1,0 +1,91 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9B816D70-7B3A-49C6-8EBF-E83653901FB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyConverter.Domain", "src\CurrencyConverter.Domain\CurrencyConverter.Domain.csproj", "{71748165-0AB0-4374-97B1-6822CE522563}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyConverter.Application", "src\CurrencyConverter.Application\CurrencyConverter.Application.csproj", "{CD18BE9A-59CC-478B-AAAC-F1E1084F06E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyConverter.Infrastructure", "src\CurrencyConverter.Infrastructure\CurrencyConverter.Infrastructure.csproj", "{4026AF20-AB30-4526-B91B-3FDE596327B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyConverter.API", "src\CurrencyConverter.API\CurrencyConverter.API.csproj", "{591282D9-C52E-4DEC-95B3-D0D4A94BA0C9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{8FE3B69F-794E-42F4-92EE-7CA0DC4A6DA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyConverter.Domain.Tests", "test\CurrencyConverter.Domain.Tests\CurrencyConverter.Domain.Tests.csproj", "{147D79E1-DDE8-49E1-8712-27DFCA6E6FB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyConverter.Application.Tests", "test\CurrencyConverter.Application.Tests\CurrencyConverter.Application.Tests.csproj", "{E8B9D944-1943-4593-A81A-B4864F5D1B8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyConverter.Infrastructure.Tests", "test\CurrencyConverter.Infrastructure.Tests\CurrencyConverter.Infrastructure.Tests.csproj", "{CD818E36-5CB4-460F-AF8F-E08FD23DD2D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyConverter.API.Tests", "test\CurrencyConverter.API.Tests\CurrencyConverter.API.Tests.csproj", "{47897AFB-A5E8-4A7F-9143-A686A14BCD5A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{0F73AF7C-C3DE-476F-9E02-16B7187566A6}"
+	ProjectSection(SolutionItems) = preProject
+		scripts\run-tests-with-coverage.ps1 = scripts\run-tests-with-coverage.ps1
+		scripts\run-tests-with-coverage.sh = scripts\run-tests-with-coverage.sh
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyConverter.TestHelpers", "test\CurrencyConverter.TestHelpers\CurrencyConverter.TestHelpers.csproj", "{938E7DF1-983E-41EE-A195-201E70D7BD18}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{71748165-0AB0-4374-97B1-6822CE522563}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71748165-0AB0-4374-97B1-6822CE522563}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71748165-0AB0-4374-97B1-6822CE522563}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71748165-0AB0-4374-97B1-6822CE522563}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD18BE9A-59CC-478B-AAAC-F1E1084F06E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD18BE9A-59CC-478B-AAAC-F1E1084F06E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD18BE9A-59CC-478B-AAAC-F1E1084F06E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD18BE9A-59CC-478B-AAAC-F1E1084F06E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4026AF20-AB30-4526-B91B-3FDE596327B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4026AF20-AB30-4526-B91B-3FDE596327B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4026AF20-AB30-4526-B91B-3FDE596327B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4026AF20-AB30-4526-B91B-3FDE596327B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{591282D9-C52E-4DEC-95B3-D0D4A94BA0C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{591282D9-C52E-4DEC-95B3-D0D4A94BA0C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{591282D9-C52E-4DEC-95B3-D0D4A94BA0C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{591282D9-C52E-4DEC-95B3-D0D4A94BA0C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{147D79E1-DDE8-49E1-8712-27DFCA6E6FB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{147D79E1-DDE8-49E1-8712-27DFCA6E6FB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{147D79E1-DDE8-49E1-8712-27DFCA6E6FB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{147D79E1-DDE8-49E1-8712-27DFCA6E6FB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8B9D944-1943-4593-A81A-B4864F5D1B8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8B9D944-1943-4593-A81A-B4864F5D1B8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8B9D944-1943-4593-A81A-B4864F5D1B8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8B9D944-1943-4593-A81A-B4864F5D1B8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD818E36-5CB4-460F-AF8F-E08FD23DD2D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD818E36-5CB4-460F-AF8F-E08FD23DD2D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD818E36-5CB4-460F-AF8F-E08FD23DD2D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD818E36-5CB4-460F-AF8F-E08FD23DD2D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47897AFB-A5E8-4A7F-9143-A686A14BCD5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47897AFB-A5E8-4A7F-9143-A686A14BCD5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47897AFB-A5E8-4A7F-9143-A686A14BCD5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47897AFB-A5E8-4A7F-9143-A686A14BCD5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{938E7DF1-983E-41EE-A195-201E70D7BD18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{938E7DF1-983E-41EE-A195-201E70D7BD18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{938E7DF1-983E-41EE-A195-201E70D7BD18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{938E7DF1-983E-41EE-A195-201E70D7BD18}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{71748165-0AB0-4374-97B1-6822CE522563} = {9B816D70-7B3A-49C6-8EBF-E83653901FB1}
+		{CD18BE9A-59CC-478B-AAAC-F1E1084F06E4} = {9B816D70-7B3A-49C6-8EBF-E83653901FB1}
+		{4026AF20-AB30-4526-B91B-3FDE596327B2} = {9B816D70-7B3A-49C6-8EBF-E83653901FB1}
+		{591282D9-C52E-4DEC-95B3-D0D4A94BA0C9} = {9B816D70-7B3A-49C6-8EBF-E83653901FB1}
+		{147D79E1-DDE8-49E1-8712-27DFCA6E6FB8} = {8FE3B69F-794E-42F4-92EE-7CA0DC4A6DA4}
+		{E8B9D944-1943-4593-A81A-B4864F5D1B8B} = {8FE3B69F-794E-42F4-92EE-7CA0DC4A6DA4}
+		{CD818E36-5CB4-460F-AF8F-E08FD23DD2D2} = {8FE3B69F-794E-42F4-92EE-7CA0DC4A6DA4}
+		{47897AFB-A5E8-4A7F-9143-A686A14BCD5A} = {8FE3B69F-794E-42F4-92EE-7CA0DC4A6DA4}
+		{938E7DF1-983E-41EE-A195-201E70D7BD18} = {8FE3B69F-794E-42F4-92EE-7CA0DC4A6DA4}
+	EndGlobalSection
+EndGlobal
